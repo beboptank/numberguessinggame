@@ -13,21 +13,30 @@ def run():
         print("You have 5 attempts remaining to guess the number.")
         attempts = 5
 
-    user_guess = int(input("Make a guess: "))
+    user_guess = -1
 
     secret_number = number_generator()
 
-    while user_guess != secret_number:
+    while user_guess != secret_number and attempts > 0:
+
+        user_guess = int(input("Make a guess: "))
 
         if user_guess > secret_number:
             print("Too high.")
         elif user_guess < secret_number:
             print("Too low.")
 
-        user_guess = int(input("Make a guess: "))
+        attempts -= 1
+
+        if attempts > 0:
+            print(f"Guesses remaining: {attempts}")
+        else:
+            print("No guesses remaining.")
 
     if user_guess == secret_number:
         print(f"You got it! The number was {secret_number}.")
+    else:
+        print(f"You didn't get it. Too bad! The number was {secret_number}.")
 
     return
 
