@@ -1,5 +1,6 @@
 import random
 
+
 def run():
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100 (inclusive).")
@@ -14,7 +15,21 @@ def run():
 
     user_guess = int(input("Make a guess: "))
 
-    number_generator(user_guess)
+    secret_number = number_generator()
+
+    while user_guess != secret_number:
+
+        if user_guess > secret_number:
+            print("Too high.")
+        elif user_guess < secret_number:
+            print("Too low.")
+
+        user_guess = int(input("Make a guess: "))
+
+    if user_guess == secret_number:
+        print(f"You got it! The number was {secret_number}.")
+
+    return
 
 
 def difficulty():
@@ -22,10 +37,7 @@ def difficulty():
     return user_difficulty
 
 
-def number_generator(user_guess):
+def number_generator():
     number_to_guess = random.randint(1, 100)
 
-    if user_guess > number_to_guess:
-        print("Too high.")
-    elif user_guess < number_to_guess:
-        print("Too low.")
+    return number_to_guess
