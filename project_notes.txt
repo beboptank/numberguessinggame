@@ -1,0 +1,16 @@
+------- Number Guessing Game Project Plan -------
+
+I. UI interface
+    a. Code 'Welcome to the Number Guessing Game!'
+    b. Code "I'm thinking of a number between 1 and 100."
+    c. Code user input with prompt: "Choose a difficulty. Type 'easy' or 'hard': "
+
+II. 'easy' or 'hard' if block
+    a. Response based on answer
+
+III. Store in input "Make a guess: "
+
+IV. Response while block for guess
+    a. Too low or too high
+    b. Guess again
+    c. Correct answer
